@@ -1,0 +1,52 @@
+<section class="section page-top">
+  <div class="shell">
+    <h1>Um sistema, duas visões.</h1>
+    <p class="lead">
+      O +party é a mesma plataforma vista de dois lugares diferentes: o celular de quem
+      sai para o rolê e o painel de quem administra o bar. Abaixo, o que cada lado enxerga.
+    </p>
+  </div>
+</section>
+
+<section class="section faixa">
+  <div class="shell">
+    @for (v of visoes; track v.kind) {
+      <article class="visao" [class.is-flip]="v.kind === 'bar'" revela>
+        <aside class="visao-aside">
+          <figure class="janela">
+            <div class="janela-barra" aria-hidden="true">
+              <span class="ponto"></span><span class="ponto"></span><span class="ponto"></span>
+              <span class="janela-rotulo">{{ v.telaRotulo }}</span>
+            </div>
+            <img
+              class="janela-tela"
+              [src]="v.tela"
+              [alt]="v.telaAlt"
+              width="1400"
+              height="750"
+              loading="lazy"
+            />
+          </figure>
+          <a [routerLink]="v.ctaLink" class="btn-ghost visao-cta">{{ v.ctaLabel }}</a>
+        </aside>
+
+        <div class="visao-body">
+          <h2>{{ v.titulo }}</h2>
+          <p class="lead visao-sub">{{ v.sub }}</p>
+
+          <ol class="passos">
+            @for (b of v.blocos; track b.t; let i = $index) {
+              <li class="passo">
+                <span class="passo-n">{{ i + 1 }}</span>
+                <div>
+                  <h3>{{ b.t }}</h3>
+                  <p>{{ b.d }}</p>
+                </div>
+              </li>
+            }
+          </ol>
+        </div>
+      </article>
+    }
+  </div>
+</section>
