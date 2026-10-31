@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "party-landing",
+  "name": "plusparty-landingpage",
   "compatibility_date": "2026-09-16",
   "assets": {
     // A saida do "ng build". Nao ha servidor: o Cloudflare serve os arquivos.
