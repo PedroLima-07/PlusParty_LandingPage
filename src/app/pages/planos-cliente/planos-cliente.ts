@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { DESTINOS } from '../../config/destinos';
 import { Revela } from '../../shared/revela';
 
 export interface Plano {
@@ -10,6 +11,8 @@ export interface Plano {
   destaque: boolean;
   itens: string[];
   cta: string;
+  /** Endereço no app para onde o botão leva. Sem ele, o botão vai para o contato. */
+  destino?: string;
 }
 
 @Component({
@@ -19,6 +22,8 @@ export interface Plano {
   styleUrl: './planos-cliente.scss',
 })
 export class PlanosCliente {
+  protected readonly destinos = DESTINOS;
+
   readonly planos: Plano[] = [
     {
       nome: 'Rolê',
@@ -34,6 +39,7 @@ export class PlanosCliente {
         'Total consumido sempre visível',
       ],
       cta: 'Criar conta',
+      destino: DESTINOS.criarConta,
     },
     {
       nome: 'Rolê+',
