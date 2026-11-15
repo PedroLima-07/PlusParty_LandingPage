@@ -58,6 +58,53 @@
 /* ---------- 2. Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Regras de base que a página herdava do Bootstrap. O Bootstrap saiu (só uma
+   classe dele era usada), e estas linhas mantêm o texto e os espaçamentos
+   exatamente como estavam. Ficam antes do resto, como o Bootstrap ficava. */
+:root { color-scheme: dark; }
+body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+h4, h5, h6 { margin-top: 0; margin-bottom: 0.5rem; font-weight: 500; line-height: 1.2; }
+p { margin-top: 0; margin-bottom: 1rem; }
+ol, ul { padding-left: 2rem; margin-top: 0; margin-bottom: 1rem; }
+dl { margin-top: 0; margin-bottom: 1rem; }
+dd { margin-bottom: 0.5rem; margin-left: 0; }
+figure { margin: 0 0 1rem; }
+hr { margin: 1rem 0; color: inherit; border: 0; border-top: 1px solid; opacity: 0.25; }
+b, strong { font-weight: bolder; }
+small { font-size: 0.875em; }
+img, svg { vertical-align: middle; }
+button { border-radius: 0; text-transform: none; }
+button, input, select, textarea { margin: 0; font-family: inherit; font-size: inherit; line-height: inherit; }
+button:not(:disabled), [type="button"]:not(:disabled) { cursor: pointer; }
+[type="button"] { -webkit-appearance: button; appearance: button; }
+
+/* Classes do projeto que tinham o mesmo nome de classes do Bootstrap e, por
+   isso, recebiam regras dele sem ninguém ter pedido. Ficam aqui para a
+   página não mudar; podem ser revistas uma a uma numa etapa de design. */
+.lead { font-weight: 300; }
+.card { display: flex; flex-direction: column; min-width: 0; color: #dee2e6; word-wrap: break-word; }
+.nav { flex-wrap: wrap; list-style: none; }
+.col { flex: 1 0 0; }
+
+/* Texto só para leitor de tela (era a .visually-hidden do Bootstrap). */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
 
 body {
