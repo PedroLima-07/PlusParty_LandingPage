@@ -1,5 +1,6 @@
 .page-top { padding-top: calc(var(--header-h) + clamp(44px, 7vw, 80px)); padding-bottom: 0; }
 .page-top h1 { font-size: clamp(2.1rem, 4.6vw, 3.1rem); }
+.page-acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; margin-top: 28px; }
 
 .planos {
   display: grid;

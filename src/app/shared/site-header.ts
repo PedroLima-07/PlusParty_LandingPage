@@ -1,5 +1,6 @@
 import { Component, HostListener, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { DESTINOS } from '../config/destinos';
 import { PartyLogo } from './party-logo';
 
 @Component({
@@ -29,6 +30,7 @@ import { PartyLogo } from './party-logo';
           <a routerLink="/planos/cliente" routerLinkActive="active" (click)="open.set(false)">Para clientes</a>
           <a routerLink="/planos/estabelecimento" routerLinkActive="active" (click)="open.set(false)">Para bares</a>
           <a routerLink="/equipe" routerLinkActive="active" (click)="open.set(false)">Equipe</a>
+          <a [href]="destinos.entrar">Entrar</a>
           <a class="btn-party nav-cta" routerLink="/" fragment="inicio" (click)="open.set(false)">
             Começar
           </a>
@@ -137,6 +139,7 @@ import { PartyLogo } from './party-logo';
   `,
 })
 export class SiteHeader {
+  protected readonly destinos = DESTINOS;
   readonly open = signal(false);
   readonly stuck = signal(false);
 

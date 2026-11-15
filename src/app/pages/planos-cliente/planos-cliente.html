@@ -5,6 +5,11 @@
       O essencial do +party é gratuito para quem sai. Se você vive na night,
       o Rolê+ resolve o resto.
     </p>
+
+    <div class="page-acoes">
+      <a class="btn-party" [href]="destinos.descobrir">Ver os bares agora</a>
+      <a class="link-quiet" [href]="destinos.entrar">Já tenho conta</a>
+    </div>
   </div>
 </section>
 
@@ -30,10 +35,17 @@
             }
           </ul>
 
-          <a class="plano-cta" [class.btn-party]="p.destaque" [class.btn-ghost]="!p.destaque"
-             routerLink="/" fragment="contato">
-            {{ p.cta }}
-          </a>
+          @if (p.destino) {
+            <a class="plano-cta" [class.btn-party]="p.destaque" [class.btn-ghost]="!p.destaque"
+               [href]="p.destino">
+              {{ p.cta }}
+            </a>
+          } @else {
+            <a class="plano-cta" [class.btn-party]="p.destaque" [class.btn-ghost]="!p.destaque"
+               routerLink="/" fragment="contato">
+              {{ p.cta }}
+            </a>
+          }
         </article>
       }
     </div>
