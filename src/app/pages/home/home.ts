@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CONTATO } from '../../config/contato';
+import { DESTINOS } from '../../config/destinos';
 import { PhoneMock } from '../../shared/phone-mock';
 import { Revela } from '../../shared/revela';
 
@@ -23,6 +25,9 @@ interface Persona {
   styleUrl: './home.scss',
 })
 export class Home {
+  protected readonly destinos = DESTINOS;
+  protected readonly contato = CONTATO;
+
   readonly personas: Persona[] = [
     {
       kind: 'cliente',
@@ -37,7 +42,6 @@ export class Home {
         'Vê a lotação do bar em tempo real antes de sair de casa',
         'Abre a comanda digital pelo próprio celular ao chegar',
         'Faz o pedido da mesa, sem levantar nem disputar o balcão',
-        'Chama o garçom pelo app quando precisa',
         'Acompanha o total consumido a qualquer momento da noite',
       ],
       ctaLabel: 'Ver planos para clientes',

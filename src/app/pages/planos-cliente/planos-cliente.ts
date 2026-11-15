@@ -3,18 +3,6 @@ import { RouterLink } from '@angular/router';
 import { DESTINOS } from '../../config/destinos';
 import { Revela } from '../../shared/revela';
 
-export interface Plano {
-  nome: string;
-  resumo: string;
-  preco: string;
-  periodo: string;
-  destaque: boolean;
-  itens: string[];
-  cta: string;
-  /** Endereço no app para onde o botão leva. Sem ele, o botão vai para o contato. */
-  destino?: string;
-}
-
 @Component({
   selector: 'app-planos-cliente',
   imports: [RouterLink, Revela],
@@ -24,37 +12,12 @@ export interface Plano {
 export class PlanosCliente {
   protected readonly destinos = DESTINOS;
 
-  readonly planos: Plano[] = [
-    {
-      nome: 'Rolê',
-      resumo: 'Tudo que você precisa para sair de casa sabendo onde vai dar.',
-      preco: 'Grátis',
-      periodo: 'para sempre',
-      destaque: false,
-      itens: [
-        'Lotação dos bares em tempo real',
-        'Comanda digital no seu celular',
-        'Pedido direto da mesa',
-        'Chamar o garçom pelo app',
-        'Total consumido sempre visível',
-      ],
-      cta: 'Criar conta',
-      destino: DESTINOS.criarConta,
-    },
-    {
-      nome: 'Rolê+',
-      resumo: 'Para quem sai toda semana e quer o rolê resolvido.',
-      preco: 'a definir',
-      periodo: 'por mês',
-      destaque: true,
-      itens: [
-        'Tudo do plano Rolê',
-        'Histórico de todas as suas noites',
-        'Dividir a conta com a galera da mesa',
-        'Bares favoritos com aviso de lotação',
-        'Vantagens nos estabelecimentos parceiros',
-      ],
-      cta: 'Quero o Rolê+',
-    },
+  /** Só o que o app já faz hoje. Função nova entra aqui quando existir. */
+  readonly itens = [
+    'Veja os bares e as promoções antes de sair de casa',
+    'Abra a comanda pelo celular ao chegar',
+    'Peça sem ir ao balcão',
+    'Acompanhe o pedido e o total da conta',
+    'Pague só o que recebeu',
   ];
 }

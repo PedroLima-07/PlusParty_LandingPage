@@ -1,14 +1,15 @@
 .page-top { padding-top: calc(var(--header-h) + clamp(44px, 7vw, 80px)); padding-bottom: 0; }
-.page-top h1 { font-size: clamp(2.1rem, 4.6vw, 3.1rem); }
+.page-top h1 { font-size: clamp(2.1rem, 4.6vw, 3.1rem); max-width: 20ch; }
 
-/* Os três planos ficam lado a lado na mesma linha; só empilham em tela estreita. */
+/* Os dois planos ficam lado a lado; só empilham em tela estreita. */
 .planos {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
+  max-width: 860px;
   align-items: stretch;
 }
-@media (max-width: 980px) {
+@media (max-width: 760px) {
   .planos { grid-template-columns: 1fr; max-width: 520px; }
 }
 .plano { display: flex; flex-direction: column; border-radius: var(--radius-lg); }
@@ -28,9 +29,15 @@
   text-transform: uppercase;
 }
 .plano-nome { font-size: 1.5rem; }
-.plano-resumo { margin: 8px 0 22px; font-size: .95rem; }
+.plano-gratis {
+  margin: 14px 0 6px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--warm);
+}
 
-.plano-preco { display: flex; align-items: baseline; gap: 8px; margin: 0 0 22px; }
+.plano-preco { display: flex; align-items: baseline; gap: 8px; margin: 0; }
+.depois { font-size: .95rem; color: var(--text-muted); }
 .valor {
   font-family: var(--font-display);
   font-size: 2.4rem;
@@ -40,6 +47,7 @@
   line-height: 1;
 }
 .periodo { font-size: .88rem; color: var(--text-faint); }
+.plano-resumo { margin: 12px 0 22px; font-size: .95rem; }
 
 .plano-itens { list-style: none; margin: 0 0 26px; padding: 0; display: grid; gap: 11px; flex: 1; }
 .plano-itens li {
@@ -58,15 +66,29 @@
 }
 .plano-cta { width: 100%; }
 
-.nota {
+.garantias {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
+  gap: 10px 28px;
+  max-width: 860px;
   margin: 28px 0 0;
   padding: 16px 20px;
+  list-style: none;
   border-radius: var(--radius);
   border: 1px dashed var(--border-strong);
-  font-size: .92rem;
+  font-weight: 600;
+  color: var(--text);
 }
+.dinheiro { margin: 18px 0 0; max-width: 860px; font-size: .95rem; }
+
+.faq { display: grid; gap: 12px; max-width: 760px; margin: 0; }
+.faq-item {
+  padding: 18px 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.faq dt { font-family: var(--font-display); font-weight: 700; color: var(--text); }
+.faq dd { margin: 6px 0 0; color: var(--text-muted); line-height: 1.6; }
+
 .troca { margin-top: 34px; font-size: .95rem; }

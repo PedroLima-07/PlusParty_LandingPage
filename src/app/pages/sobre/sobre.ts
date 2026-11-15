@@ -40,8 +40,8 @@ export class Sobre {
           d: 'Cardápio completo no celular. O pedido vai direto para a tela da equipe, sem fila no balcão e sem anotação em papel.',
         },
         {
-          t: 'Chamar o garçom',
-          d: 'Um toque chama o atendente até a mesa. O botão fica desabilitado por alguns segundos para evitar chamadas repetidas.',
+          t: 'Acompanhar o pedido',
+          d: 'Cada pedido mostra em que etapa está, do envio até chegar à mesa. Ninguém precisa ir ao balcão perguntar.',
         },
         {
           t: 'Acompanhar o total',
@@ -69,15 +69,15 @@ export class Sobre {
         },
         {
           t: 'Tela da equipe',
-          d: 'Atendentes têm acesso próprio: liberam comandas, recebem pedidos e respondem aos chamados das mesas.',
+          d: 'Atendentes têm acesso próprio: entram por convite do gerente, liberam comandas e recebem os pedidos no bar e na cozinha.',
         },
         {
           t: 'Cardápio editável',
           d: 'O bar mantém itens, preços e disponibilidade atualizados. O que muda no painel aparece na hora no app do cliente.',
         },
         {
-          t: 'Relatórios e BI',
-          d: 'Histórico de vendas por dia, horário e item, com dashboard gerencial para embasar as decisões do próximo mês.',
+          t: 'Resultados',
+          d: 'Pedidos, horário de pico, tempo de preparo e itens mais vendidos dos últimos 3, 7, 15 ou 30 dias, para embasar as decisões do próximo mês.',
         },
       ],
       ctaLabel: 'Ver planos para bares',
