@@ -8,5 +8,8 @@
     // Rotas como /equipe e /planos/cliente sao resolvidas pelo Angular no
     // navegador, entao qualquer caminho desconhecido devolve o index.html.
     "not_found_handling": "single-page-application"
-  }
+  },
+  // Exigido pelo "npx wrangler preview", que o Cloudflare roda nos branches
+  // fora do master (os PRs) para gerar a URL de previa.
+  "previews": {}
 }
