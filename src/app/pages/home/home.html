@@ -18,11 +18,11 @@
       <!-- Ticket de entrada: um único ponto de decisão (mesma regra do README),
            só que desenhado como um ingresso de balada em vez de dois botões soltos. -->
       <div class="ticket" role="group" aria-label="Escolha seu perfil">
-        <a routerLink="/planos/cliente" class="ticket-half ticket-primary">
+        <a [href]="destinos.criarConta" class="ticket-half ticket-primary">
           <span class="ticket-label">Entrada</span>
           Eu vou pro rolê
         </a>
-        <a routerLink="/planos/estabelecimento" class="ticket-half ticket-ghost">
+        <a [href]="contato.whatsapp" target="_blank" rel="noopener" class="ticket-half ticket-ghost">
           <span class="ticket-label">Acesso</span>
           Eu tenho um bar
         </a>
@@ -104,23 +104,42 @@
   </div>
 </section>
 
-<!-- ============ 3. CONTATO ============ -->
+<!-- ============ 3. PROVA ============ -->
+<!-- Curto de propósito: um fato verificável e um convite, sem número inventado. -->
+<section id="teste" class="section">
+  <div class="shell prova" revela>
+    <span class="chip is-warm">Teste real</span>
+    <h2>Já passou por uma noite de verdade.</h2>
+    <p class="lead">
+      Em setembro, levamos o +party para uma noite no Japa's Deck. O que vimos
+      lá, no salão e na tela da equipe, virou ajuste no sistema.
+    </p>
+    <p class="prova-convite">
+      Agora procuramos os <strong>10 primeiros bares de Sorocaba</strong>.
+      <a routerLink="/planos/estabelecimento" class="link-quiet">Ver o plano Fundador</a>
+    </p>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ============ 4. CONTATO ============ -->
 <section id="contato" class="section">
   <div class="shell">
     <div class="contato card" revela>
       <div>
         <h2>Dúvida, parceria ou quer o +party no seu bar?</h2>
         <p class="lead">
-          Fala com a gente por e-mail. Respondemos com o time do projeto.
+          Chama no WhatsApp: quem responde é o time do projeto.
         </p>
       </div>
 
       <div class="contato-cta">
-        <a class="btn-party" href="mailto:contato&#64;party.app?subject=Contato%20pelo%20site%20do%20%2Bparty">
-          contato&#64;party.app
+        <a class="btn-party" [href]="contato.whatsapp" target="_blank" rel="noopener">
+          WhatsApp {{ contato.whatsappExibicao }}
         </a>
-        <a routerLink="/equipe" class="link-quiet">
-          Conhecer a equipe
+        <a class="link-quiet" [href]="contato.emailLink">
+          {{ contato.email }}
         </a>
       </div>
     </div>

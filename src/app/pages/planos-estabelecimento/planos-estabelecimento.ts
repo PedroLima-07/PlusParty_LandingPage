@@ -1,7 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import type { Plano } from '../planos-cliente/planos-cliente';
+import { CONTATO } from '../../config/contato';
 import { Revela } from '../../shared/revela';
+
+interface PlanoBar {
+  nome: string;
+  /** Etiqueta em destaque no topo do cartão. Só o plano principal tem. */
+  selo?: string;
+  gratis: string;
+  preco: string;
+  resumo: string;
+  cta: string;
+}
 
 @Component({
   selector: 'app-planos-estabelecimento',
@@ -10,51 +20,59 @@ import { Revela } from '../../shared/revela';
   styleUrl: './planos-estabelecimento.scss',
 })
 export class PlanosEstabelecimento {
-  readonly planos: Plano[] = [
+  protected readonly contato = CONTATO;
+
+  /** Valores do plano de venda de nov/2026. Os dois planos têm o mesmo sistema. */
+  readonly planos: PlanoBar[] = [
     {
-      nome: 'Balcão',
-      resumo: 'Para o bar pequeno que quer tirar a comanda do papel.',
-      preco: 'a definir',
-      periodo: 'por mês',
-      destaque: false,
-      itens: [
-        'Comandas digitais ilimitadas',
-        'Tela de atendimento para a equipe',
-        'Cardápio editável pelo painel',
-        'Perfil do bar na plataforma',
-        'Lotação publicada em tempo real',
-      ],
-      cta: 'Falar com o time',
+      nome: 'Fundador',
+      selo: '10 primeiros bares',
+      gratis: '60 dias grátis',
+      preco: 'R$ 149',
+      resumo:
+        'Travado por 12 meses. A gente monta o seu cardápio e fica com você na primeira noite.',
+      cta: 'Quero ser bar fundador',
     },
     {
       nome: 'Salão',
-      resumo: 'Para quem já lota e precisa enxergar a operação inteira.',
-      preco: 'a definir',
-      periodo: 'por mês',
-      destaque: true,
-      itens: [
-        'Tudo do plano Balcão',
-        'Painel de gestão com vendas em tempo real',
-        'Chamados de garçom por mesa',
-        'Relatórios por dia, horário e item',
-        'Múltiplos usuários de atendimento',
-      ],
-      cta: 'Falar com o time',
+      gratis: '30 dias grátis',
+      preco: 'R$ 299',
+      resumo: 'O mesmo sistema completo, do 11º bar em diante.',
+      cta: 'Falar com a equipe',
+    },
+  ];
+
+  /** Só o que o sistema já faz hoje. Função nova entra aqui quando existir. */
+  readonly itens = [
+    'Comandas sem limite',
+    'Tela de pedidos para bar e cozinha',
+    'Cardápio que você mesmo edita',
+    'Movimento da noite com alertas',
+    'Resultados por período',
+    'Equipe por convite',
+    'Promoções e perfil do bar',
+  ];
+
+  readonly perguntas = [
+    {
+      p: 'Tem taxa por pedido ou por cliente?',
+      r: 'Não. É um valor fixo por mês, com 10 ou com 1.000 comandas.',
     },
     {
-      nome: 'Casa',
-      resumo: 'Para rede de bares e casas noturnas com mais de uma unidade.',
-      preco: 'sob consulta',
-      periodo: '',
-      destaque: false,
-      itens: [
-        'Tudo do plano Salão',
-        'Gestão de várias unidades num painel só',
-        'Dashboard gerencial em Power BI',
-        'Exportação de dados para o time de BI',
-        'Suporte prioritário',
-      ],
-      cta: 'Falar com o time',
+      p: 'Preciso comprar equipamento?',
+      r: 'Não. Funciona no celular da equipe e do cliente.',
+    },
+    {
+      p: 'E se eu não gostar?',
+      r: 'Cancela quando quiser, sem multa. No período grátis você não paga nada.',
+    },
+    {
+      p: 'O dinheiro das vendas passa por vocês?',
+      r: 'Não. O cliente paga no caixa do bar, como hoje.',
+    },
+    {
+      p: 'Meu cliente paga alguma coisa?',
+      r: 'Nunca.',
     },
   ];
 }

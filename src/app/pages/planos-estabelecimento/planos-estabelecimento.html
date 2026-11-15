@@ -1,9 +1,9 @@
 <section class="section page-top">
   <div class="shell">
-    <h1>Pare de fechar o mês no achismo.</h1>
+    <h1>Um plano. Tudo incluído. Sem taxa por pedido.</h1>
     <p class="lead">
-      Comanda digital, tela para a equipe e um painel que mostra o que está
-      acontecendo no salão agora, não só quando o caixa fecha.
+      Comanda digital, tela para a equipe e a sua noite em tempo real.
+      Funciona no celular que você já tem.
     </p>
   </div>
 </section>
@@ -12,44 +12,65 @@
   <div class="shell">
     <div class="planos">
       @for (p of planos; track p.nome) {
-        <article class="card plano" [class.is-top]="p.destaque" [revela]="$index * 110">
-          @if (p.destaque) {
-            <span class="tag-top">Mais escolhido</span>
+        <article class="card plano" [class.is-top]="p.selo" [revela]="$index * 110">
+          @if (p.selo) {
+            <span class="tag-top">{{ p.selo }}</span>
           }
           <h2 class="plano-nome">{{ p.nome }}</h2>
+
+          <p class="plano-gratis">{{ p.gratis }}</p>
+          <p class="plano-preco">
+            <span class="depois">Depois,</span>
+            <span class="valor">{{ p.preco }}</span>
+            <span class="periodo">por mês</span>
+          </p>
           <p class="plano-resumo">{{ p.resumo }}</p>
 
-          <p class="plano-preco">
-            <span class="valor">{{ p.preco }}</span>
-            @if (p.periodo) {
-              <span class="periodo">{{ p.periodo }}</span>
-            }
-          </p>
-
           <ul class="plano-itens">
-            @for (i of p.itens; track i) {
+            @for (i of itens; track i) {
               <li>{{ i }}</li>
             }
           </ul>
 
-          <a class="plano-cta" [class.btn-party]="p.destaque" [class.btn-ghost]="!p.destaque"
-             routerLink="/" fragment="contato">
+          <a class="plano-cta" [class.btn-party]="p.selo" [class.btn-ghost]="!p.selo"
+             [href]="contato.whatsapp" target="_blank" rel="noopener">
             {{ p.cta }}
           </a>
         </article>
       }
     </div>
 
-    <p class="nota" revela>
-      <span class="chip is-warm">Em definição</span>
-      O modelo de monetização ainda está sendo fechado pelo time, e os valores acima
-      entram quando a decisão do Lean Canvas for concluída.
+    <ul class="garantias" revela>
+      <li>Sem equipamento</li>
+      <li>Sem taxa por pedido</li>
+      <li>Sem fidelidade: cancele quando quiser</li>
+    </ul>
+
+    <p class="dinheiro" revela>
+      O dinheiro das vendas não passa pelo +party. Seu cliente paga no seu caixa, como hoje.
     </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <div class="section-head" revela>
+      <h2>Perguntas sobre o preço</h2>
+    </div>
+
+    <dl class="faq">
+      @for (f of perguntas; track f.p) {
+        <div class="faq-item" revela>
+          <dt>{{ f.p }}</dt>
+          <dd>{{ f.r }}</dd>
+        </div>
+      }
+    </dl>
 
     <p class="troca" revela>
       Você é cliente e caiu aqui sem querer?
       <a routerLink="/planos/cliente" class="link-quiet">
-        Ver os planos para clientes
+        Ver o que é grátis para você
       </a>
     </p>
   </div>

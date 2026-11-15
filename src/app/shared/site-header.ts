@@ -31,9 +31,7 @@ import { PartyLogo } from './party-logo';
           <a routerLink="/planos/estabelecimento" routerLinkActive="active" (click)="open.set(false)">Para bares</a>
           <a routerLink="/equipe" routerLinkActive="active" (click)="open.set(false)">Equipe</a>
           <a [href]="destinos.entrar">Entrar</a>
-          <a class="btn-party nav-cta" routerLink="/" fragment="inicio" (click)="open.set(false)">
-            Começar
-          </a>
+          <a class="btn-party nav-cta" [href]="destinos.criarConta">Começar</a>
         </nav>
       </div>
     </header>
@@ -91,7 +89,7 @@ import { PartyLogo } from './party-logo';
     .burger {
       display: none;
       position: relative;
-      width: 42px; height: 42px;
+      width: 44px; height: 44px;
       border: 1px solid var(--border);
       border-radius: 12px;
       background: var(--surface);
@@ -99,14 +97,14 @@ import { PartyLogo } from './party-logo';
     }
     .bar {
       position: absolute;
-      left: 11px;
+      left: 12px;
       width: 18px; height: 2px;
       border-radius: 2px;
       background: var(--text);
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
-    .bar:first-of-type { top: 16px; }
-    .bar:last-of-type  { top: 23px; }
+    .bar:first-of-type { top: 17px; }
+    .bar:last-of-type  { top: 24px; }
     .bar.x1 { transform: translateY(3.5px) rotate(45deg); }
     .bar.x2 { transform: translateY(-3.5px) rotate(-45deg); }
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CONTATO } from '../config/contato';
 import { PartyLogo } from './party-logo';
 import { Revela } from './revela';
 
@@ -28,7 +29,8 @@ import { Revela } from './revela';
           <div class="col">
             <h3 class="col-t">Projeto</h3>
             <a routerLink="/equipe">Nossa equipe</a>
-            <a href="mailto:contato&#64;party.app">contato&#64;party.app</a>
+            <a [href]="contato.whatsapp" target="_blank" rel="noopener">WhatsApp {{ contato.whatsappExibicao }}</a>
+            <a [href]="contato.emailLink">{{ contato.email }}</a>
           </div>
         </nav>
       </div>
@@ -73,6 +75,12 @@ import { Revela } from './revela';
     }
     .col a:hover { color: var(--text); }
 
+    /* No celular, cada link vira uma área de toque de 44 px. */
+    @media (max-width: 760px) {
+      .col { gap: 0; }
+      .col a, .ft-base a { display: inline-flex; align-items: center; min-height: 44px; }
+    }
+
     .ft-base {
       display: flex;
       flex-wrap: wrap;
@@ -91,5 +99,6 @@ import { Revela } from './revela';
   `,
 })
 export class SiteFooter {
+  protected readonly contato = CONTATO;
   readonly ano = new Date().getFullYear();
 }

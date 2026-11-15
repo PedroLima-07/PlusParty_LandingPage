@@ -1,9 +1,8 @@
 <section class="section page-top">
   <div class="shell">
-    <h1>Entrar no rolê não custa nada.</h1>
+    <h1>Para você é grátis. Sempre.</h1>
     <p class="lead">
-      O essencial do +party é gratuito para quem sai. Se você vive na night,
-      o Rolê+ resolve o resto.
+      Sem baixar aplicativo: abre no navegador do celular.
     </p>
 
     <div class="page-acoes">
@@ -15,46 +14,22 @@
 
 <section class="section faixa">
   <div class="shell">
-    <div class="planos">
-      @for (p of planos; track p.nome) {
-        <article class="card plano" [class.is-top]="p.destaque" [revela]="$index * 110">
-          @if (p.destaque) {
-            <span class="tag-top">Mais completo</span>
-          }
-          <h2 class="plano-nome">{{ p.nome }}</h2>
-          <p class="plano-resumo">{{ p.resumo }}</p>
+    <article class="card plano is-top" revela>
+      <h2 class="plano-nome">Rolê</h2>
 
-          <p class="plano-preco">
-            <span class="valor">{{ p.preco }}</span>
-            <span class="periodo">{{ p.periodo }}</span>
-          </p>
+      <p class="plano-preco">
+        <span class="valor">R$ 0</span>
+        <span class="periodo">sempre</span>
+      </p>
 
-          <ul class="plano-itens">
-            @for (i of p.itens; track i) {
-              <li>{{ i }}</li>
-            }
-          </ul>
+      <ul class="plano-itens">
+        @for (i of itens; track i) {
+          <li>{{ i }}</li>
+        }
+      </ul>
 
-          @if (p.destino) {
-            <a class="plano-cta" [class.btn-party]="p.destaque" [class.btn-ghost]="!p.destaque"
-               [href]="p.destino">
-              {{ p.cta }}
-            </a>
-          } @else {
-            <a class="plano-cta" [class.btn-party]="p.destaque" [class.btn-ghost]="!p.destaque"
-               routerLink="/" fragment="contato">
-              {{ p.cta }}
-            </a>
-          }
-        </article>
-      }
-    </div>
-
-    <p class="nota" revela>
-      <span class="chip is-warm">Em definição</span>
-      O modelo de monetização ainda está sendo fechado pelo time, e os valores acima
-      entram quando a decisão do Lean Canvas for concluída.
-    </p>
+      <a class="btn-party plano-cta" [href]="destinos.criarConta">Criar minha conta</a>
+    </article>
 
     <p class="troca" revela>
       Tem um bar?

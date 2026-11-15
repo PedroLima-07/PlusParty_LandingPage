@@ -99,7 +99,7 @@
 }
 .tag:nth-child(2n) { transform: rotate(1.1deg); }
 .tag-warm {
-  color: #7a4c1c;
+  color: var(--warm);
   background: var(--warm-soft);
   border-color: rgba(255, 178, 92, 0.4);
 }
@@ -230,6 +230,13 @@
   box-shadow: 0 0 0 4px rgba(43, 87, 240, .16);
 }
 .persona-cta { margin-top: 26px; }
+
+/* ---- Prova ---- */
+.prova { max-width: 62ch; }
+.prova h2 { margin-top: 16px; }
+.prova-convite { margin: 22px 0 0; }
+.prova-convite a { margin-left: 6px; }
+.prova-convite strong { color: var(--text); }
 
 /* ---- Contato ---- */
 .contato {
