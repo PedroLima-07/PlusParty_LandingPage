@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     title: '+party | Seu rolê começa aqui',
-    loadComponent: () => import('./pages/home/home').then((m) => m.Home),
+    loadComponent: () => import('./pages/noite/noite').then((m) => m.Noite),
   },
   {
     path: 'sobre',
