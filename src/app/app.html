@@ -1,6 +1,10 @@
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-<app-site-header />
+@if (!paginaInicial()) {
+  <app-site-header />
+}
 <main id="conteudo">
   <router-outlet />
 </main>
-<app-site-footer />
+@if (!paginaInicial()) {
+  <app-site-footer />
+}

@@ -1,0 +1,194 @@
+<nav class="topnav" aria-label="Principal">
+  <a href="#relogio" data-lado-go="cli" class="tn-brand">+party</a>
+  <div class="tn-seg" role="group" aria-label="Escolha o seu lado">
+    <button type="button" data-lado-go="cli" aria-pressed="true">Vou pro rolê</button>
+    <button type="button" data-lado-go="bar" aria-pressed="false">Tenho um bar</button>
+  </div>
+  <div class="tn-links">
+    <a href="#planos" data-go="planos">Planos</a>
+    <a [href]="destinos.entrar" target="_blank" rel="noopener" class="tn-in">Entrar</a>
+  </div>
+</nav>
+
+<div class="lp-main">
+  <section class="k k1" id="relogio" data-lado="cli" aria-label="A noite agora">
+    <div class="k1-main gut">
+      <h1 class="k1-clock" id="k1clock" aria-live="off">23:40</h1>
+      <div>
+        <p class="k1-say" id="k1say">Três bares cheios agora em Sorocaba.</p>
+        <a class="k1-cta" [href]="destinos.descobrir" target="_blank" rel="noopener">Ver os bares agora</a>
+      </div>
+      <ul class="k1-list" id="k1list"></ul>
+    </div>
+  </section>
+
+  <section class="k k3" id="cartaz" data-lado="cli" aria-label="O que o +party faz">
+    <div class="k3-wall gut">
+      <div class="k3-s" style="--paper:#f5e100;--r:-.6deg;--d:.05s"><h2 class="fit">Hoje tem rolê</h2><p class="k3-sub"><span>Sorocaba, toda noite</span><span>Grátis pra quem sai</span></p></div>
+      <div class="k3-s" style="--paper:#ff5aa8;--r:.5deg;--d:.2s"><span class="fit">Veja onde tá cheio</span><p class="k3-sub"><span>A lotação de cada bar, antes de você sair de casa</span></p></div>
+      <div class="k3-s" style="--paper:#f6f4ee;--r:-.3deg;--d:.35s"><span class="fit">Peça da mesa</span><p class="k3-sub"><span>Comanda no celular, sem fila no balcão</span></p></div>
+      <div class="k3-s" style="--paper:#5b8cff;--r:.7deg;--d:.5s"><span class="fit">Saiba quanto deu</span><p class="k3-sub"><span>O total da noite na sua mão, a qualquer hora</span></p></div>
+      <div class="k3-end">
+        <p>O +party liga quem sai para o rolê aos bares da cidade. Procuramos os 10 primeiros bares de Sorocaba.</p>
+        <div class="k3-btns"><a [href]="destinos.criarConta" target="_blank" rel="noopener">Eu vou pro rolê</a><a href="#bares" data-lado-go="bar">Eu tenho um bar</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="k k2" id="comanda" data-lado="cli" aria-label="A comanda">
+    <div class="k2-main gut">
+      <div>
+        <h2 class="k2-h">A noite inteira numa comanda só.</h2>
+        <p class="k2-p">Você vê como está o bar antes de sair, abre a comanda no celular ao chegar e pede da mesa. O total fica na sua mão até a hora de ir embora.</p>
+      </div>
+      <div class="rcp-wrap">
+        <div class="rcp" id="rcp">
+          <p class="rcp-brand">+party</p>
+          <p class="rcp-c">Comanda nº 0001, mesa 12</p>
+          <p class="rcp-c" id="rcpWhen">Sorocaba, hoje</p>
+          <hr>
+          <p class="rcp-row"><span>1 Ver a lotação antes de sair</span><span class="dots"></span><span>0,00</span></p>
+          <p class="rcp-row"><span>1 Abrir a comanda no celular</span><span class="dots"></span><span>0,00</span></p>
+          <p class="rcp-row"><span>1 Pedir da mesa, sem fila</span><span class="dots"></span><span>0,00</span></p>
+          <p class="rcp-row"><span>1 Acompanhar o total da noite</span><span class="dots"></span><span>0,00</span></p>
+          <hr>
+          <p class="rcp-tot"><span>Total pra você</span><span>R$ 0,00</span></p>
+          <p>Grátis, sempre.</p>
+          <a class="rcp-btn" [href]="destinos.criarConta" target="_blank" rel="noopener">Abrir minha comanda</a>
+          <hr>
+          <p class="rcp-c">Via do bar</p>
+          <p>Comanda digital, tela da equipe e painel de vendas. Plano Fundador: 60 dias grátis, depois R$ 149 por mês.</p>
+          <a class="rcp-btn alt" href="#bares" data-lado-go="bar">Quero no meu bar</a>
+          <div class="rcp-code" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+    <span class="k2-ring" aria-hidden="true"></span>
+  </section>
+
+  <section class="k k4" id="lista" data-lado="cli" aria-label="Lotação dos bares">
+    <div class="k4-head gut">
+      <h2 class="k4-h">Quanto mais largo o nome, mais cheio o bar. <span>Veja antes de sair de casa.</span></h2>
+    </div>
+    <ul class="k4-list gut" id="k4list"></ul>
+    <div class="k4-foot gut">
+      <p>Você vê a lotação, abre a comanda no celular e pede da mesa. Para quem sai, é grátis.</p>
+      <div class="k4-btns"><a [href]="destinos.descobrir" target="_blank" rel="noopener">Ver os bares agora</a><a href="#bares" data-lado-go="bar">Tenho um bar</a></div>
+    </div>
+  </section>
+
+  <section class="mid gut" id="bares" aria-label="Para bares" data-lado="bar">
+    <h2>Do outro lado do balcão.</h2>
+    <p>A mesma noite, vista por quem toca o bar. Arraste a hora aqui embaixo e veja o caixa, os pedidos e as vendas mudarem.</p>
+    <a href="#relogio" data-lado-go="cli">Voltar para o lado de quem sai</a>
+  </section>
+
+  <section class="k b1" id="caixa" data-lado="bar" aria-label="O caixa da noite">
+    <div class="b1-main gut">
+      <h2 class="b1-money" id="b1money">R$ 6.240</h2>
+      <div>
+        <p class="b1-say" id="b1say">vendidos até as 23:40. Você não espera fechar o caixa para saber.</p>
+        <a class="cta" href="#planos" data-go="planos">Ver os planos</a>
+      </div>
+      <ul class="b1-list">
+        <li><span>Comandas abertas</span><b id="b1c">38</b></li>
+        <li><span>Pedidos em preparo</span><b id="b1p">4</b></li>
+        <li><span>Lotação da casa</span><b id="b1l">81%</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="k b2" id="trilho" data-lado="bar" aria-label="Pedidos da equipe">
+    <div class="b2-head gut">
+      <h2 class="b2-h">O pedido sai da mesa e cai aqui.</h2>
+      <p class="b2-p">O cliente pede pelo celular e a comanda aparece na tela da equipe. Toque num pedido para passar de novo a em preparo e a pronto.</p>
+    </div>
+    <div class="gut"><div class="rail" id="rail">
+      <div class="col" data-s="0"><h2><span>Novo</span><span class="n"></span></h2><ul></ul></div>
+      <div class="col" data-s="1"><h2><span>Em preparo</span><span class="n"></span></h2><ul></ul></div>
+      <div class="col" data-s="2"><h2><span>Pronto</span><span class="n"></span></h2><ul></ul></div>
+    </div></div>
+    <div class="b2-foot gut">
+      <p class="plan">Plano Fundador para os 10 primeiros bares de Sorocaba: 60 dias grátis, depois R$ 149 por mês, sem taxa por pedido.</p>
+      <a class="cta" href="#planos" data-go="planos">Ver os planos</a>
+    </div>
+  </section>
+
+  <section class="k b3" id="vendas" data-lado="bar" aria-label="O que mais vende">
+    <div class="b3-head gut">
+      <h2 class="b3-h">Quanto mais largo o nome, mais vendeu. <span>Chega de decidir o mês no achismo.</span></h2>
+    </div>
+    <ul class="b3-list gut" id="b3list"></ul>
+    <div class="b3-foot gut">
+      <p class="plan">Relatório do que vende, em que dia e em que horário. Plano Fundador: 60 dias grátis, depois R$ 149 por mês.</p>
+      <a class="cta" href="#planos" data-go="planos">Ver os planos</a>
+    </div>
+  </section>
+
+  <section class="pl gut" id="planos" aria-label="Planos">
+    <div data-lado="cli">
+      <h2>Pra você é grátis.</h2>
+      <div class="pl-free">
+        <p class="pl-zero">R$ 0</p>
+        <ul class="pl-inc">
+          <li>Ver a lotação dos bares antes de sair</li>
+          <li>Abrir a comanda no celular ao chegar</li>
+          <li>Pedir da mesa, sem fila no balcão</li>
+          <li>Acompanhar o total da noite</li>
+        </ul>
+      </div>
+      <div class="pl-end">
+        <p>Sem mensalidade e sem cartão para criar a conta. Quem paga o +party é o bar.</p>
+        <a [href]="destinos.criarConta" target="_blank" rel="noopener">Criar minha conta</a>
+      </div>
+    </div>
+    <div data-lado="bar">
+      <h2>Quanto custa pro bar.</h2>
+      <div class="pl-two">
+        <article class="pl-card">
+          <p class="pl-n">Fundador</p>
+          <p class="pl-who">Para os 10 primeiros bares de Sorocaba</p>
+          <p class="pl-big">R$ 149 <small>por mês</small></p>
+          <p class="pl-trial">Os primeiros 60 dias são grátis.</p>
+          <ul class="pl-inc">
+            <li>Preço travado por 12 meses</li>
+            <li>Implantação feita com você</li>
+            <li>Acompanhamento na primeira noite</li>
+          </ul>
+        </article>
+        <article class="pl-card">
+          <p class="pl-n">Salão</p>
+          <p class="pl-who">Do 11º bar em diante</p>
+          <p class="pl-big">R$ 299 <small>por mês</small></p>
+          <p class="pl-trial">Os primeiros 30 dias são grátis.</p>
+          <ul class="pl-inc">
+            <li>O sistema inteiro, igual ao Fundador</li>
+          </ul>
+        </article>
+      </div>
+      <div class="pl-all">
+        <p class="pl-all-t">Os dois planos trazem</p>
+        <ul>
+          <li>Comanda digital</li><li>Tela da equipe para os pedidos</li><li>Painel de vendas e lotação</li><li>Relatório do que vende, por dia e horário</li><li>Perfil do bar para quem procura onde ir</li>
+        </ul>
+      </div>
+      <div class="pl-end">
+        <p>Mensalidade fixa por unidade. Sem taxa por pedido, sem instalação e sem fidelidade. O dinheiro das vendas não passa pelo +party.</p>
+        <a [href]="contato.whatsapp" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="lp-foot gut">
+    <span><b>+party</b>, Sorocaba. Projeto acadêmico da equipe Technomind, FACENS. Bares e números desta página são de exemplo.</span>
+    <nav aria-label="Mais sobre o projeto"><a routerLink="/sobre">Sobre o sistema</a><a routerLink="/equipe">Equipe</a></nav>
+  </footer>
+  <div class="spacer"></div>
+</div>
+
+<div class="night" role="group" aria-label="Hora da noite">
+  <label for="nr">A noite</label>
+  <output id="nt" for="nr">23:40</output>
+  <input type="range" id="nr" min="0" max="600" step="5" value="340" aria-valuetext="23:40">
+  <button type="button" id="np">Pausar</button>
+</div>
